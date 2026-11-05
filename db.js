@@ -1,8 +1,9 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 
 //testdb is name of database, it will automatically make it
 mongoose
-  .connect("mongodb://localhost/testdb")
+  .connect("mongodb+srv://map39_db_user:079788kc3tS@cluster0.f7nivuw.mongodb.net/")
   .then(() => console.log("Connected to mongodb..."))
   .catch((err) => console.error("could not connect ot mongodb...", err));
 
