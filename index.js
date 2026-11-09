@@ -7,7 +7,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(cors());
 
-// Multer storage setup for image uploads
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "./public/images/");
@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// Detailing Services Data Model
+
 let services = [
   {
     _id: 1,
@@ -71,12 +71,10 @@ let services = [
   }
 ];
 
-// GET endpoint to return detailing services
 app.get("/api/services", (req, res) => {
   res.send(services);
 });
 
-// Listen for incoming requests on port 3001 (or process.env.PORT for Render deployment)
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server is up and running on port ${PORT}`);
